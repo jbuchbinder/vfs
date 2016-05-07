@@ -261,7 +261,7 @@ func TestRemoveAll(t *testing.T) {
 	fs.files["/"] = fiRoot
 
 	fiTmpFile.Name()
-	err := RemoveAll(fs, "/tmp")
+	err := fs.RemoveAll(fs, "/tmp")
 	if err != nil {
 		t.Errorf("Unexpected error remove all: %s", err)
 	}

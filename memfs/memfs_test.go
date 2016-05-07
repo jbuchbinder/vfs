@@ -5,7 +5,7 @@ import (
 	"os"
 	"testing"
 
-	"github.com/blang/vfs"
+	"github.com/jbuchbinder/vfs"
 )
 
 func TestInterface(t *testing.T) {

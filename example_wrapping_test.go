@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/blang/vfs"
+	"github.com/jbuchbinder/vfs"
 )
 
 type noNewDirs struct {

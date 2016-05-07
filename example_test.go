@@ -2,9 +2,9 @@ package vfs_test
 
 import (
 	"fmt"
-	"github.com/blang/vfs"
-	"github.com/blang/vfs/memfs"
-	"github.com/blang/vfs/mountfs"
+	"github.com/jbuchbinder/vfs"
+	"github.com/jbuchbinder/vfs/memfs"
+	"github.com/jbuchbinder/vfs/mountfs"
 	"os"
 )
 

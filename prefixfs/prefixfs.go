@@ -3,7 +3,7 @@ package prefixfs
 import (
 	"os"
 
-	"github.com/blang/vfs"
+	"github.com/jbuchbinder/vfs"
 )
 
 // A FS that prefixes the path in each vfs.Filesystem operation.
@@ -35,6 +35,11 @@ func (fs *FS) OpenFile(name string, flag int, perm os.FileMode) (vfs.File, error
 // Remove implements vfs.Filesystem.
 func (fs *FS) Remove(name string) error {
 	return fs.Filesystem.Remove(fs.PrefixPath(name))
+}
+
+// RemoveAll implements vfs.Filesystem.
+func (fs *FS) RemoveAll(name string) error {
+	return fs.Filesystem.RemoveAll(fs.PrefixPath(name))
 }
 
 // Rename implements vfs.Filesystem.

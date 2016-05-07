@@ -5,8 +5,8 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/blang/vfs"
-	"github.com/blang/vfs/memfs"
+	"github.com/jbuchbinder/vfs"
+	"github.com/jbuchbinder/vfs/memfs"
 )
 
 const prefixPath = "/prefix"

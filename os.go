@@ -28,6 +28,11 @@ func (fs OsFS) Remove(name string) error {
 	return os.Remove(name)
 }
 
+// Remove wraps os.Remove
+func (fs OsFS) RemoveAll(name string) error {
+	return os.RemoveAll(name)
+}
+
 // Mkdir wraps os.Mkdir
 func (fs OsFS) Mkdir(name string, perm os.FileMode) error {
 	return os.Mkdir(name, perm)

@@ -1,7 +1,7 @@
 package memfs
 
 import (
-	"github.com/blang/vfs"
+	"github.com/jbuchbinder/vfs"
 	"testing"
 )
 

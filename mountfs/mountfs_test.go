@@ -2,7 +2,7 @@ package mountfs
 
 import (
 	"errors"
-	"github.com/blang/vfs"
+	"github.com/jbuchbinder/vfs"
 	"os"
 	"testing"
 )

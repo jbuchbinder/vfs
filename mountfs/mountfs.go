@@ -2,7 +2,7 @@ package mountfs
 
 import (
 	"errors"
-	"github.com/blang/vfs"
+	"github.com/jbuchbinder/vfs"
 	"os"
 	filepath "path"
 	"strings"
@@ -110,7 +110,12 @@ func (fs MountFS) Remove(name string) error {
 	return mount.Remove(innerPath)
 }
 
-// Rename renames a file.
+// RemoveAll removes a file or directory with all descendents
+func (fs MountFS) Remove(name string) error {
+	mount, innerPath := findMount(name, fs.mounts, fs.rootFS, string(fs.PathSeparator()))
+	return mount.RemoveAll(innerPath)
+}
+
 // Renames across filesystems are not allowed.
 func (fs MountFS) Rename(oldpath, newpath string) error {
 	oldMount, oldInnerPath := findMount(oldpath, fs.mounts, fs.rootFS, string(fs.PathSeparator()))

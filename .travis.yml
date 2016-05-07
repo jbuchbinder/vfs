@@ -1,0 +1,11 @@
+language: go
+sudo: false
+go:
+  - 1.5
+  - 1.6
+  - tip
+before_script:
+  - go get -d -v
+script:
+  - go build -v
+  - go test -v
