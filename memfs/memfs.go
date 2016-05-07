@@ -318,6 +318,13 @@ func (fs *MemFS) Remove(name string) error {
 	return nil
 }
 
+// RemoveAll removes the named file or directory and all descendents.
+// If there is an error, it will be of type *PathError.
+func (fs *MemFS) RemoveAll(name string) error {
+	// TODO: FIXME: Placeholder leaving orphans
+	return fs.Remove(name)
+}
+
 // Rename renames (moves) a file.
 // Handles to the oldpath persist but might return oldpath if Name() is called.
 func (fs *MemFS) Rename(oldpath, newpath string) error {
