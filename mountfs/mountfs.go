@@ -111,7 +111,7 @@ func (fs MountFS) Remove(name string) error {
 }
 
 // RemoveAll removes a file or directory with all descendents
-func (fs MountFS) Remove(name string) error {
+func (fs MountFS) RemoveAll(name string) error {
 	mount, innerPath := findMount(name, fs.mounts, fs.rootFS, string(fs.PathSeparator()))
 	return mount.RemoveAll(innerPath)
 }
