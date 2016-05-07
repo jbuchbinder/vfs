@@ -31,6 +31,11 @@ func (fs DummyFS) Remove(name string) error {
 	return fs.err
 }
 
+// RemoveAll returns dummy error
+func (fs DummyFS) RemoveAll(name string) error {
+	return RemoveAll(fs, name)
+}
+
 // Rename returns dummy error
 func (fs DummyFS) Rename(oldpath, newpath string) error {
 	return fs.err
