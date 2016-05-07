@@ -1,17 +1,22 @@
-vfs for golang [![Build Status](https://drone.io/github.com/blang/vfs/status.png)](https://drone.io/github.com/blang/vfs/latest) [![GoDoc](https://godoc.org/github.com/blang/vfs?status.png)](https://godoc.org/github.com/blang/vfs) [![Coverage Status](https://img.shields.io/coveralls/blang/vfs.svg)](https://coveralls.io/r/blang/vfs?branch=master) [![Join the chat at https://gitter.im/blang/vfs](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/blang/vfs?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+vfs for golang [![Build Status](https://drone.io/github.com/jbuchbinder/vfs/status.png)](https://drone.io/github.com/jbuchbinder/vfs/latest) [![Build Status](https://secure.travis-ci.org/jbuchbinder/vfs.png)](http://travis-ci.org/jbuchbinder/vfs) [![GoDoc](https://godoc.org/github.com/jbuchbinder/vfs?status.png)](https://godoc.org/github.com/jbuchbinder/vfs) [![Join the chat at https://gitter.im/jbuchbinder/vfs](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/jbuchbinder/vfs?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 ======
 
 vfs is library to support virtual filesystems. It provides basic abstractions of filesystems and implementations, like `OS` accessing the file system of the underlying OS and `memfs` a full filesystem in-memory.
 
+This is a fork of [blang's original tree](https://github.com/blang/vfs), enhanced with:
+
+ * golang.org/x/net/webdav FileSystem interface support
+ * Database-backed filesystem support (in progress)
+
 Usage
 -----
 ```bash
-$ go get github.com/blang/vfs
+$ go get github.com/jbuchbinder/vfs
 ```
 Note: Always vendor your dependencies or fix on a specific version tag.
 
 ```go
-import github.com/blang/vfs
+import github.com/jbuchbinder/vfs
 ```
 
 ```go
@@ -52,7 +57,7 @@ fs.Mkdir("/memfs/testdir", 0777)
 fs.Mkdir("/tmp/testdir", 0777)
 ```
 
-Check detailed examples below. Also check the [GoDocs](http://godoc.org/github.com/blang/vfs).
+Check detailed examples below. Also check the [GoDocs](http://godoc.org/github.com/jbuchbinder/vfs).
 
 Why should I use this lib?
 -----
@@ -62,16 +67,16 @@ Why should I use this lib?
 - Easy to create your own filesystem
 - Mock a full filesystem for testing (or use included `memfs`)
 - Compose/Wrap Filesystems `ReadOnly(OS())` and write simple Wrappers
-- Many features, see [GoDocs](http://godoc.org/github.com/blang/vfs) and examples below
+- Many features, see [GoDocs](http://godoc.org/github.com/jbuchbinder/vfs) and examples below
 
 Features and Examples
 -----
 
-- [OS Filesystem support](http://godoc.org/github.com/blang/vfs#example-OsFS)
-- [ReadOnly Wrapper](http://godoc.org/github.com/blang/vfs#example-RoFS)
-- [DummyFS for quick mocking](http://godoc.org/github.com/blang/vfs#example-DummyFS)
-- [MemFS - full in-memory filesystem](http://godoc.org/github.com/blang/vfs/memfs#example-MemFS)
-- [MountFS - support mounts across filesystems](http://godoc.org/github.com/blang/vfs/mountfs#example-MountFS)
+- [OS Filesystem support](http://godoc.org/github.com/jbuchbinder/vfs#example-OsFS)
+- [ReadOnly Wrapper](http://godoc.org/github.com/jbuchbinder/vfs#example-RoFS)
+- [DummyFS for quick mocking](http://godoc.org/github.com/jbuchbinder/vfs#example-DummyFS)
+- [MemFS - full in-memory filesystem](http://godoc.org/github.com/jbuchbinder/vfs/memfs#example-MemFS)
+- [MountFS - support mounts across filesystems](http://godoc.org/github.com/jbuchbinder/vfs/mountfs#example-MountFS)
 
 Current state: ALPHA
 -----
